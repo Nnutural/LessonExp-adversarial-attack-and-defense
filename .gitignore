@@ -1,0 +1,11 @@
+data/
+checkpoints/
+logs/
+figures/
+__pycache__/
+*.py[cod]
+*.pt
+*.pth
+.venv/
+.env
+.DS_Store
