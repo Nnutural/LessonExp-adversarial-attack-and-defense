@@ -1,6 +1,6 @@
 data/
-checkpoints/
-logs/
+# checkpoints/
+# logs/
 # figures/
 __pycache__/
 *.py[cod]

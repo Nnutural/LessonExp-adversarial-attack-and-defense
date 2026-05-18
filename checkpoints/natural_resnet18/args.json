@@ -1,0 +1,21 @@
+{
+  "mode": "natural",
+  "data_dir": "data",
+  "output_dir": "checkpoints",
+  "run_name": "natural_resnet18",
+  "download": true,
+  "epochs": 30,
+  "batch_size": 256,
+  "val_size": 5000,
+  "num_workers": 4,
+  "lr": 0.1,
+  "momentum": 0.9,
+  "weight_decay": 0.0005,
+  "seed": 42,
+  "amp": true,
+  "epsilon": 0.03137254901960784,
+  "pgd_alpha": 0.00784313725490196,
+  "pgd_steps": 3,
+  "no_random_start": false,
+  "device": "cuda"
+}
