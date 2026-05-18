@@ -1,7 +1,7 @@
 data/
 checkpoints/
 logs/
-figures/
+# figures/
 __pycache__/
 *.py[cod]
 *.pt
