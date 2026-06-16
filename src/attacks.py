@@ -39,6 +39,7 @@ def fgsm_attack(
         logits = model(adv_images)
         loss = F.cross_entropy(logits, labels)
         grad = torch.autograd.grad(loss, adv_images, only_inputs=True)[0]
+
         adv_images = adv_images + epsilon * grad.sign()
         adv_images = torch.clamp(adv_images, 0.0, 1.0)
     return adv_images.detach()
@@ -71,6 +72,7 @@ def pgd_attack(
             logits = model(adv_images)
             loss = F.cross_entropy(logits, labels)
             grad = torch.autograd.grad(loss, adv_images, only_inputs=True)[0]
+            
             adv_images = adv_images + alpha * grad.sign()
             delta = torch.clamp(adv_images - images, min=-epsilon, max=epsilon)
             adv_images = torch.clamp(images + delta, 0.0, 1.0)

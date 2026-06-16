@@ -77,6 +77,7 @@ def train_one_epoch(
         images = images.to(device, non_blocking=True)
         labels = labels.to(device, non_blocking=True)
 
+        # adversarial train
         if args.mode == "pgd-at":
             images_for_update = pgd_attack(
                 model,
@@ -137,6 +138,7 @@ def main() -> None:
     args_payload = _serializable_args(args)
     save_json(run_dir / "args.json", args_payload | {"device": str(device), "run_name": run_name})
 
+    # Data_loader
     train_loader, val_loader, _ = build_cifar10_loaders(
         data_dir=args.data_dir,
         batch_size=args.batch_size,
